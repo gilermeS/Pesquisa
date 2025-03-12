@@ -68,6 +68,9 @@ for i in range(10000):
 	
 
 
+print(f'Status: 100.00 %')
+
+
 z_arr=zmin+(zmax-zmin)*np.arange(nz)/(nz-1.0)
 
 asda = np.array([friedmann(z,h0,omega_m) for z in z_arr])
