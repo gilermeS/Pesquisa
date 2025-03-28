@@ -24,4 +24,4 @@ O estudo explora a aplicação de modelos de **Deep Learning** (redes neurais de
 Este projeto está licenciado sob a licença MIT
 📞 Contato
 Para dúvidas ou colaborações, entre em contato:
-Email: seu-email@ufs.br
+Email: guilhermesouza1302@gmail.com
