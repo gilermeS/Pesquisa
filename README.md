@@ -1,10 +1,15 @@
 # Análise de Dados Cosmológicos com Deep Learning: Aplicação ao Projeto Planck  
 
-**Autor**: Guilherme de Souza Ramos Cardoso  
-**Orientador**: Luciano Casarini 
-**Instituição**: Universidade Federal de Sergipe (UFS)  
+**Autor**: Guilherme de Souza Ramos Cardoso
+
+**Orientador**: Luciano Casarini
+
+**Instituição**: Universidade Federal de Sergipe (UFS)
+
 **Departamento**: Departamento de Física
+
 **Ano**: 2025
+
 
 ## 📌 Descrição do Repositório  
 
@@ -22,6 +27,8 @@ O estudo explora a aplicação de modelos de **Deep Learning** (redes neurais de
 
 📜 Licença
 Este projeto está licenciado sob a licença MIT
+
+
 📞 Contato
 Para dúvidas ou colaborações, entre em contato:
 Email: guilhermesouza1302@gmail.com
