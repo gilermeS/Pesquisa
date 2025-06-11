@@ -1,34 +1,68 @@
-# Análise de Dados Cosmológicos com Deep Learning: Aplicação ao Projeto Planck  
+# Análise de Dados Cosmológicos com Deep Learning: Aplicação ao Projeto Planck
 
-**Autor**: Guilherme de Souza Ramos Cardoso
-
-**Orientador**: Luciano Casarini
-
-**Instituição**: Universidade Federal de Sergipe (UFS)
-
-**Departamento**: Departamento de Física
-
+**Autor**: Guilherme de Souza Ramos Cardoso  
+**Orientador**: Luciano Casarini  
+**Instituição**: Universidade Federal de Sergipe (UFS)  
+**Departamento**: Departamento de Física  
 **Ano**: 2025
 
+## 📌 Descrição do Projeto
 
-## 📌 Descrição do Repositório  
+Este repositório contém a implementação e análise de diferentes modelos de Machine Learning e Deep Learning aplicados à análise de dados cosmológicos do Projeto Planck. O estudo utiliza dados sintéticos gerados via Monte Carlo Bootstrap para avaliar o desempenho de diversos modelos na reconstrução e predição de parâmetros cosmológicos.
 
-Este repositório contém os códigos, dados e análises desenvolvidos para o Trabalho de Conclusão de Curso (TCC) intitulado **"Análise de Dados Cosmológicos com Deep Learning: Aplicação ao Projeto Planck"**, realizado na UFS.  
+## 🏗️ Estrutura do Projeto
 
-O estudo explora a aplicação de modelos de **Deep Learning** (redes neurais densas, convolucionais e recorrentes) na análise de **dados fiduciais do projeto Planck**, utilizando **dados sintéticos gerados via Monte Carlo Bootstrap**. O objetivo é avaliar o desempenho desses modelos na reconstrução e predição de parâmetros cosmológicos, comparando-os com métodos tradicionais.  
+```
+.
+├── input/                  # Dados de entrada originais
+├── input2/                 # Dados de entrada adicionais
+├── imagens/               # Visualizações e gráficos gerados
+├── models/                # Modelos treinados salvos
+├── wacdm/                 # Implementações específicas do modelo wCDM
+├── pesquisa2parte/        # Análises complementares
+```
 
+## 🧠 Modelos Implementados
 
-## 🔍 Principais Resultados  
+O projeto implementa e compara diversos modelos de aprendizado de máquina:
 
-- Comparação do desempenho de **ANNs, CNNs e RNNs** na análise de dados cosmológicos.  
-- Análise do impacto de **hiperparâmetros** (taxa de aprendizado, funções de ativação) nos modelos.  
-- Demonstração do potencial do **Deep Learning** para complementar métodos tradicionais em cosmologia.  
+1. **Deep Learning**
+   - Redes Neurais Densas (Dense.ipynb, Dense_Kfold.ipynb)
+   - Redes Neurais Convolucionais (CNN.ipynb, CNN_Kfold.ipynb)
+   - Redes Neurais Recorrentes (RNN.ipynb, RNN_Kfold.ipynb)
 
+2. **Machine Learning Tradicional**
+   - Support Vector Machines (SVM.ipynb)
+   - Análise de Importância de Features (feature_importance.ipynb)
 
-📜 Licença
-Este projeto está licenciado sob a licença MIT
+## 📊 Análises e Ferramentas
 
+- **Validação Cruzada**: Implementação de K-Fold Cross Validation para todos os modelos
+- **Análise de Features**: Avaliação da importância das features usando diferentes metodologias
+- **Geração de Dados**: Scripts para geração de dados sintéticos (gerador_pontos.py, gerador_pontos.ipynb)
 
-📞 Contato
+## 🔍 Principais Resultados
+
+- Comparação abrangente entre modelos de Deep Learning (ANNs, CNNs, RNNs) e métodos tradicionais
+- Análise detalhada do impacto de hiperparâmetros no desempenho dos modelos
+- Avaliação da importância de features para diferentes abordagens
+- Demonstração do potencial do Deep Learning em complementar métodos tradicionais em cosmologia
+
+## 🛠️ Tecnologias Utilizadas
+
+- Python
+- TensorFlow/Keras
+- Scikit-learn
+- NumPy
+- Pandas
+- Matplotlib
+- Jupyter Notebooks
+
+## 📜 Licença
+
+Este projeto está licenciado sob a licença MIT.
+
+## 📞 Contato
+
 Para dúvidas ou colaborações, entre em contato:
-Email: guilhermesouza1302@gmail.com
+- Email: guilhermesouza1302@gmail.com
