@@ -18,7 +18,8 @@ Este repositório contém a implementação e análise de diferentes modelos de 
 ├── input2/                 # Dados de entrada adicionais
 ├── imagens/               # Visualizações e gráficos gerados
 ├── models/                # Modelos treinados salvos
-├── wacdm/                 # Implementações específicas do modelo wCDM
+├── wacdm/                 # Implementações específicas do modelo WaCDM
+├── wcdm/                 # Implementações específicas do modelo WCDM
 ├── pesquisa2parte/        # Análises complementares
 ```
 
