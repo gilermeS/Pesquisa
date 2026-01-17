@@ -1,4 +1,4 @@
-# Análise de Dados Cosmológicos com Deep Learning: Aplicação ao Projeto Planck
+# Análise de Dados Cosmológicos com Deep Learning — Projeto Planck
 
 **Autor**: Guilherme de Souza Ramos Cardoso  
 **Orientador**: Luciano Casarini  
@@ -6,64 +6,80 @@
 **Departamento**: Departamento de Física  
 **Ano**: 2025
 
-## 📌 Descrição do Projeto
+## Descrição
 
-Este repositório contém a implementação e análise de diferentes modelos de Machine Learning e Deep Learning aplicados à análise de dados cosmológicos do Projeto Planck. O estudo utiliza dados sintéticos gerados via Monte Carlo Bootstrap para avaliar o desempenho de diversos modelos na reconstrução e predição de parâmetros cosmológicos.
+Repositório com implementação e análise de modelos de Machine Learning e Deep Learning aplicados a dados cosmológicos (dados sintéticos gerados por Monte Carlo Bootstrap). O objetivo é comparar arquiteturas e avaliar a capacidade de reconstrução de parâmetros cosmológicos (ex.: H0, omega_m).
 
-## 🏗️ Estrutura do Projeto
+## Estrutura do projeto
 
+ - input/         : Dados de entrada (simulações)
+ - input2/        : Dados adicionais
+ - imagens/       : Gráficos e visuais gerados
+ - models/        : Modelos treinados (saved_model)
+ - CNN/, Dense/, RNN/: Notebooks e experimentos por arquitetura
+ - wacdm/, wcdm/  : Variantes específicas do estudo
+ - pesquisa2parte/ : Análises complementares e modelos TPOT
+
+## Modelos incluídos
+
+- Deep Learning:
+   - Dense (fully connected)
+   - CNN (convolutional)
+   - RNN (GRU / bidirecional)
+
+- Machine Learning clássico:
+   - SVM
+   - Análise de importância por permutação
+
+## Requisitos (rápido)
+
+ - Python 3.8+  
+ - TensorFlow (>=2.10)  
+ - scikit-learn  
+ - numpy, pandas, matplotlib, tqdm, joblib
+
+Recomendo criar um ambiente virtual e instalar dependências:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -U pip
+pip install tensorflow scikit-learn numpy pandas matplotlib tqdm joblib
 ```
-.
-├── input/                  # Dados de entrada originais
-├── input2/                 # Dados de entrada adicionais
-├── imagens/               # Visualizações e gráficos gerados
-├── models/                # Modelos treinados salvos
-├── wacdm/                 # Implementações específicas do modelo WaCDM
-├── wcdm/                 # Implementações específicas do modelo WCDM
-├── pesquisa2parte/        # Análises complementares
-```
 
-## 🧠 Modelos Implementados
+## Como usar (rápido)
 
-O projeto implementa e compara diversos modelos de aprendizado de máquina:
+- Abra os notebooks correspondentes (`CNN/CNN.ipynb`, `Dense/Dense.ipynb`, `RNN/RNN.ipynb`) e execute as células para treinar ou avaliar modelos.  
+- Para carregar modelos já treinados, veja a pasta `models/` — por exemplo `models/rnn`, `models/cnn`, `models/dense`.  
+- O notebook `feature_importance.ipynb` mostra como calcular importância por permutação (para as redes) e também usa um `SVM` salvo (`models/svm.pkl`).
 
-1. **Deep Learning**
-   - Redes Neurais Densas (Dense.ipynb, Dense_Kfold.ipynb)
-   - Redes Neurais Convolucionais (CNN.ipynb, CNN_Kfold.ipynb)
-   - Redes Neurais Recorrentes (RNN.ipynb, RNN_Kfold.ipynb)
+## Executando um experimento (exemplo)
 
-2. **Machine Learning Tradicional**
-   - Support Vector Machines (SVM.ipynb)
-   - Análise de Importância de Features (feature_importance.ipynb)
+1. Gerar/colocar os arquivos `.npy` na pasta `input/` (nome padrão: `data_1.npy`, `data_2.npy`, ...).  
+2. Abrir o notebook desejado e rodar as células (ou usar `papermill` para execução programática).  
 
-## 📊 Análises e Ferramentas
+## Dados
 
-- **Validação Cruzada**: Implementação de K-Fold Cross Validation para todos os modelos
-- **Análise de Features**: Avaliação da importância das features usando diferentes metodologias
-- **Geração de Dados**: Scripts para geração de dados sintéticos (gerador_pontos.py, gerador_pontos.ipynb)
+Os dados de entrada são arrays NumPy em `input/` e `input2/`. Cada arquivo `data_*.npy` contém os vetores usados como features e alvo.
 
-## 🔍 Principais Resultados
+## Modelos salvos
 
-- Comparação abrangente entre modelos de Deep Learning (ANNs, CNNs, RNNs) e métodos tradicionais
-- Análise detalhada do impacto de hiperparâmetros no desempenho dos modelos
-- Avaliação da importância de features para diferentes abordagens
-- Demonstração do potencial do Deep Learning em complementar métodos tradicionais em cosmologia
+Modelos treinados são exportados em `models/` no formato Keras `saved_model`. Exemplos:
 
-## 🛠️ Tecnologias Utilizadas
+- `models/rnn`  
+- `models/rnn_bi`  
+- `models/cnn`  
+- `models/dense`
 
-- Python
-- TensorFlow/Keras
-- Scikit-learn
-- NumPy
-- Pandas
-- Matplotlib
-- Jupyter Notebooks
+## Sugestões / próximos passos
 
-## 📜 Licença
+- Gerar um `requirements.txt` para fixar versões (posso criar se desejar).  
+- Automatizar execução de notebooks com `papermill` para reprodutibilidade.
 
-Este projeto está licenciado sob a licença MIT.
+## Licença
 
-## 📞 Contato
+MIT
 
-Para dúvidas ou colaborações, entre em contato:
-- Email: guilhermesouza1302@gmail.com
+## Contato
+
+guilhermesouza1302@gmail.com
