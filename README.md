@@ -14,6 +14,7 @@ Repositório com implementação e análise de modelos de Machine Learning e Dee
 
  - input/         : Dados de entrada (simulações)
  - input2/        : Dados adicionais
+ - input31/        : Dados adicionais com 31 pontos e dados reais retirados da Tabela 1 de Bengaly et al.
  - imagens/       : Gráficos e visuais gerados
  - models/        : Modelos treinados (saved_model)
  - CNN/, Dense/, RNN/: Notebooks e experimentos por arquitetura
@@ -60,7 +61,7 @@ pip install tensorflow scikit-learn numpy pandas matplotlib tqdm joblib
 
 ## Dados
 
-Os dados de entrada são arrays NumPy em `input/` e `input2/`. Cada arquivo `data_*.npy` contém os vetores usados como features e alvo.
+Os dados de entrada são arrays NumPy em `input/`, `input2/`e `input31/`. Cada arquivo `data_*.npy` contém os vetores usados como features e alvo.
 
 ## Modelos salvos
 
