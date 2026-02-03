@@ -1,12 +1,9 @@
-old codes/
-input/
-Results/
 imagens/
 imagens/metrics_h0_dense.png
 imagens/metrics_omega_rnn.png
 .ipynb_checkpoints
-input2/
 pesquisa2parte/
 wacdm/
 wcdm/
-input31/
+test.ipynb
+input*/
