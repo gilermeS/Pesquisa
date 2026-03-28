@@ -7,3 +7,7 @@ wacdm/
 wcdm/
 test.ipynb
 input*/
+.vscode/
+nul
+__pycache__/
+AGENTS.md
