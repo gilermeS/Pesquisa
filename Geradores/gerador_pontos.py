@@ -2,7 +2,6 @@ import numpy as np
 import random
 
 
-
 omega_m = 0.315
 sig_om = 0.007
 
@@ -20,11 +19,11 @@ sig_h0 = 0.62
 
 
 def foo(center, sig, n=3):
-	return random.uniform(center- n*sig, center+ n*sig)
+	return random.uniform(center - n*sig, center + n*sig)
+
 
 def friedmann(z, h, om):
 	return h*np.sqrt(om*(1+z)**3. + (1.-om))
-
 
 
 zmin = 0.1
