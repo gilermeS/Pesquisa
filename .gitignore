@@ -8,3 +8,5 @@ wcdm/
 test.ipynb
 input*/
 .vscode/
+nul
+__pycache__/
