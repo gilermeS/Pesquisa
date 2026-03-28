@@ -12,25 +12,47 @@ Repositório com implementação e análise de modelos de Machine Learning e Dee
 
 ## Estrutura do projeto
 
- - input/         : Dados de entrada (simulações)
- - input2/        : Dados adicionais
- - input31/        : Dados adicionais com 31 pontos e dados reais retirados da Tabela 1 de Bengaly et al.
- - imagens/       : Gráficos e visuais gerados
- - models/        : Modelos treinados (saved_model)
- - CNN/, Dense/, RNN/: Notebooks e experimentos por arquitetura
- - wacdm/, wcdm/  : Variantes específicas do estudo
- - pesquisa2parte/ : Análises complementares e modelos TPOT
+### Código Fonte
+ - `cosmology/`      : Pacote para modelos cosmológicos e geração de dados
+ - `utils/`          : Funções utilitárias para carregamento de dados e visualização
+ - `Geradores/`      : Scripts para geração de dados LCDM
+ - `SVM/`            : Análise de importância de features com SVM
+
+### Diretórios de Dados
+ - `input/`          : Dados de entrada LCDM (80 pontos)
+ - `input2/`         : Dados adicionais
+ - `input31/`        : Dados LCDM com 31 pontos + dados reais (Bengaly et al.)
+ - `input47/`        : Dados LCDM com 47 pontos
+ - `wacdm/input_wacdm/` : Dados wACDM
+ - `wcdm/input_wcdm/`   : Dados wCDM
+
+### Notebooks e Experimentos
+ - `CNN/`, `Dense/`, `RNN/` : Notebooks por arquitetura
+ - `wacdm/`, `wcdm/`        : Experimentos com modelos de energia escura
+ - `BNN/`                   : Rede Neural Bayesiana
+ - `pesquisa2parte/`        : Análises complementares e modelos TPOT
+
+### Resultados
+ - `models/`         : Modelos treinados (saved_model)
+ - `imagens/`        : Gráficos e visuais gerados
+ - `References/`     : Artigos de referência
 
 ## Modelos incluídos
 
-- Deep Learning:
-   - Dense (fully connected)
-   - CNN (convolutional)
-   - RNN (GRU / bidirecional)
+### Pacote Cosmology
+O pacote `cosmology/` fornece implementações modulares para:
+- **Modelos Cosmológicos**: LCDM, wCDM, w(a)CDM
+- **Geração de Dados**: Monte Carlo para dados sintéticos
+- **Parâmetros**: Configurações de Planck 2018 e parâmetros personalizáveis
 
-- Machine Learning clássico:
-   - SVM
-   - Análise de importância por permutação
+### Deep Learning
+- Dense (fully connected)
+- CNN (convolutional)
+- RNN (GRU / bidirecional)
+
+### Machine Learning clássico
+- SVM
+- Análise de importância por permutação
 
 ## Requisitos (rápido)
 

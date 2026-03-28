@@ -12,8 +12,21 @@ This document provides instructions for AI coding agents (e.g., Copilot, Cursor)
    ```
 2. Install dependencies (if not already):
    ```powershell
-   pip install tensorflow scikit-learn numpy pandas matplotlib tqdm joblib
+   pip install tensorflow scikit-learn numpy pandas matplotlib tqdm joblib black isort flake8 mypy
    ```
+
+### Project Structure
+```
+Pesquisa/
+├── cosmology/           # Cosmological models and data generation
+├── utils/               # Utility functions for data loading and visualization
+├── Geradores/           # LCDM data generation scripts
+├── SVM/                 # SVM feature importance analysis
+├── CNN/, Dense/, RNN/   # Architecture-specific notebooks
+├── wacdm/, wcdm/        # Dark energy model experiments
+├── input*/              # Data directories
+└── models/              # Trained model checkpoints
+```
 
 ### Running Notebooks
 - Use Jupyter Notebook or JupyterLab:
@@ -31,11 +44,20 @@ This document provides instructions for AI coding agents (e.g., Copilot, Cursor)
   ```bash
   python Geradores/gerador_pontos.py
   ```
+- Use the cosmology package for data generation:
+  ```python
+  from cosmology.generators import generate_lcdm_data
+  generate_lcdm_data(n_simulations=10000, output_dir='input/')
+  ```
 
 ### Single Test Execution
 - No formal test suite currently exists. If tests are added later, use `pytest`:
   ```bash
   pytest path/to/test_file.py::test_function_name -v
+  ```
+- For automated execution, use `papermill`:
+  ```bash
+  papermill input_notebook.ipynb output_notebook.ipynb -p parameter_name value
   ```
 
 ### Linting & Formatting

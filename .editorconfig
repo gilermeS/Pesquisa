@@ -1,0 +1,48 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.bat]
+indent_style = tab
+indent_size = 8
+
+[*.md]
+trim_trailing_whitespace = false
+
+[Makefile]
+indent_style = tab
+
+[requirements.txt]
+indent_size = 2
+
+[*.yml]
+indent_size = 2
+
+[*.yaml]
+indent_size = 2
+
+[*.json]
+indent_size = 2
+
+[*.ipynb]
+indent_size = 4
+
+[cosmology/**]
+indent_size = 4
+max_line_length = 88
+
+[utils/**]
+indent_size = 4
+max_line_length = 88
+
+[Geradores/**]
+indent_size = 4
+max_line_length = 88

@@ -1,9 +1,17 @@
+"""Feature importance analysis for SVM models."""
 import numpy as np
 from sklearn.base import BaseEstimator
 from sklearn.metrics import r2_score
 import matplotlib.pyplot as plt
+from typing import Tuple, Optional, List
 
-def calculate_svm_feature_importance(model, X, y, n_repeats=10):
+
+def calculate_svm_feature_importance(
+    model: BaseEstimator,
+    X: np.ndarray,
+    y: np.ndarray,
+    n_repeats: int = 10
+) -> Tuple[np.ndarray, np.ndarray]:
     """
     Calculate feature importance for SVM models using permutation importance.
     
@@ -55,7 +63,11 @@ def calculate_svm_feature_importance(model, X, y, n_repeats=10):
     
     return feature_importance, feature_importance_std
 
-def plot_feature_importance(feature_importance, feature_importance_std, feature_names=None):
+def plot_feature_importance(
+    feature_importance: np.ndarray,
+    feature_importance_std: np.ndarray,
+    feature_names: Optional[List[str]] = None
+) -> plt.Figure:
     """
     Plot feature importance with error bars.
     
