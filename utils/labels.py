@@ -67,6 +67,9 @@ LABELS: Dict[str, BilingualLabel] = {
     'theory': BilingualLabel('Teoria', 'Theory'),
     'observation': BilingualLabel('Observação', 'Observation'),
     'simulation': BilingualLabel('Simulação', 'Simulation'),
+    'value': BilingualLabel('Valor', 'Value'),
+    'metric': BilingualLabel('Métrica', 'Metric'),
+    'importance': BilingualLabel('Importância', 'Importance'),
 }
 
 
