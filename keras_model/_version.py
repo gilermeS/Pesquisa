@@ -1,0 +1,5 @@
+"""Version information for keras_model package."""
+__version__ = "1.0.0"
+__author__ = "Guilherme de Souza Ramos Cardoso"
+__email__ = "guilhermesouza1302@gmail.com"
+__description__ = "Deep Learning Infrastructure for Cosmological Data Analysis"
