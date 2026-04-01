@@ -4,6 +4,9 @@ import matplotlib.pyplot as plt
 from typing import Optional, List, Tuple, Dict, Any
 from pathlib import Path
 
+from utils.styles import apply_style, get_color_cycle, FIGURE_SIZES, OKABE_ITO
+from utils.labels import get_label, format_axis
+
 
 def plot_training_history(
     history: Dict[str, List[float]],
