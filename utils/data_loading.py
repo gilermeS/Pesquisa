@@ -12,7 +12,6 @@ def load_dataset(
     data_dir: Union[str, Path],
     n_files: Optional[int] = None,
     file_pattern: str = "data_{}.npy",
-    start_index: int = 1,
     verbose: bool = True
 ) -> Tuple[np.ndarray, np.ndarray]:
     """
@@ -22,7 +21,6 @@ def load_dataset(
         data_dir: Directory containing data files
         n_files: Number of files to load (loads all if None)
         file_pattern: Pattern for file names (use {} for index)
-        start_index: Starting index for files
         verbose: Show progress bar
         
     Returns:
@@ -52,13 +50,16 @@ def load_dataset(
         # Extract features (z, H(z)) and target (H0)
         redshifts = data[:, 0]  # First column: z
         hubble = data[:, 1]     # Second column: H(z)
-        h0_value = data[0, 2] / len(redshifts)  # Third column: n*H0
+        h0_value = data[0, 2]  # Third column: n*H0
         
         # Create feature array with shape (n_points, 2) for (z, H(z))
         features = np.column_stack([redshifts, hubble])
         
         X_list.append(features)
-        y_list.append(h0_value)
+
+        # X_list.append(data[:, :2])
+
+        y_list.append(h0_value) 
     
     X = np.array(X_list)
     y = np.array(y_list)
@@ -108,7 +109,7 @@ def load_dataset_parallel(
         
         redshifts = data[:, 0]
         hubble = data[:, 1]
-        h0_value = data[0, 2] / len(redshifts)
+        h0_value = data[0, 2]
         
         features = np.column_stack([redshifts, hubble])
         return features, h0_value

@@ -35,40 +35,40 @@ def plot_training_history(
         metrics = [key for key in history.keys() if not key.startswith('val_')]
     
     # Plot training & validation loss
-    ax = axes[0]
+    ax0 = axes[0]
     if 'loss' in history:
-        ax.plot(history['loss'], label='Training Loss', linewidth=2)
+        ax0.plot(history['loss'], label='Training Loss', linewidth=2)
     if 'val_loss' in history:
-        ax.plot(history['val_loss'], label='Validation Loss', linewidth=2)
-    ax.set_xlabel('Epoch')
-    ax.set_ylabel('Loss')
-    ax.set_title('Training & Validation Loss')
-    ax.legend()
-    ax.grid(True, alpha=0.3)
+        ax0.plot(history['val_loss'], label='Validation Loss', linewidth=2)
+    ax0.set_xlabel('Epoch')
+    ax0.set_ylabel('Loss')
+    ax0.set_title('Training & Validation Loss')
+    ax0.legend()
+    ax0.grid(True, alpha=0.3)
     
     # Plot other metrics
-    ax = axes[1]
+    ax1 = axes[1]
     other_metrics = [m for m in metrics if m != 'loss']
     
     if other_metrics:
         for metric in other_metrics[:3]:  # Limit to 3 metrics
-            ax.plot(history[metric], label=f'Training {metric}', linewidth=2)
+            ax1.plot(history[metric], label=f'Training {metric}', linewidth=2)
             val_metric = f'val_{metric}'
             if val_metric in history:
-                ax.plot(history[val_metric], label=f'Validation {metric}', linewidth=2)
+                ax1.plot(history[val_metric], label=f'Validation {metric}', linewidth=2)
         
-        ax.set_xlabel('Epoch')
-        ax.set_ylabel('Metric Value')
-        ax.set_title('Training Metrics')
-        ax.legend()
-        ax.grid(True, alpha=0.3)
+        ax1.set_xlabel('Epoch')
+        ax1.set_ylabel('Metric Value')
+        ax1.set_title('Training Metrics')
+        ax1.legend()
+        ax1.grid(True, alpha=0.3)
     else:
         # If no other metrics, plot a blank plot
-        ax.text(0.5, 0.5, 'No additional metrics', 
+        ax1.text(0.5, 0.5, 'No additional metrics', 
                 horizontalalignment='center',
                 verticalalignment='center',
-                transform=ax.transAxes)
-        ax.set_title('Additional Metrics')
+                transform=ax1.transAxes)
+        ax1.set_title('Additional Metrics')
     
     plt.tight_layout()
     
@@ -803,7 +803,7 @@ def plot_timestep_importance_enhanced(
     theory_model: Optional[str] = 'LCDM',
     highlight_regions: Optional[List[Tuple[float, float]]] = None,
     language: str = 'both',
-    figsize: Tuple[int, int] = (14, 5),
+    figsize: Tuple[int, int] = (12, 5),
     save_path: Optional[Path] = None,
     show: bool = True
 ) -> plt.Figure:
@@ -842,7 +842,7 @@ def plot_timestep_importance_enhanced(
         unc = np.array(uncertainties)
         ax.fill_between(x, imp - unc, imp + unc, alpha=0.3, color=colors[0], label=get_label('confidence_interval', language))
     
-    ax.plot(x, imp, linewidth=2, color=colors[0], label=get_label('timestep_importance', language))
+    ax.plot(x, imp, '-o', markersize=4, linewidth=1.5, color=colors[0], label=get_label('timestep_importance', language))
     
     if show_theory:
         theory_z = np.linspace(x.min(), x.max(), 100)
